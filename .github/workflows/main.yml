@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     permissions: write-all
-    container: ghcr.io/lixiaoliu666/pve8docker:main
     env:
       TZ: Asia/Shanghai
     steps:
@@ -53,11 +52,7 @@ jobs:
           echo "Listing files in artifacts directory:"
           ls -l artifacts/
           cd artifacts
-          rm *riscv*
-          rm *legacy*
-          rm *aarch64*
-          rm *deps*
-          rm *firmware_4*
+          
 
       # Step 7: 创建 GitHub Release
       - name: Create GitHub Releases
