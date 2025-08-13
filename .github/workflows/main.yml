@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     permissions: write-all
+    container: ghcr.io/lixiaoliu666/pve9docker:main
     env:
       TZ: Asia/Shanghai
     steps:
@@ -26,6 +27,8 @@ jobs:
       # Step 3: 构建 deb 文件
       - name: Build
         run: |
+          uname -a
+          sudo uname -a
           sudo bash build.sh
           mkdir -p artifacts
           find ./ -name "*.deb" -exec cp {} ./artifacts/ \;
