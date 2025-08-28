@@ -13,8 +13,15 @@ jobs:
     env:
       TZ: Asia/Shanghai
     steps:
-      # Step 1: 检出代码
-      - uses: actions/checkout@v3
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+      # Step 1: 检出代码     
+      - name: Checkout
+        uses: actions/checkout@v3
         with:  
           submodules: 'true'
 
