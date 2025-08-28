@@ -22,7 +22,6 @@ jobs:
       # Step 2: 安装构建所需的软件包
       - name: Install base package
         run: |
-          sudo fdisk -l
           df -h
           df -h | grep '/$'
           pwd
