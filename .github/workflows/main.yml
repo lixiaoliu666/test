@@ -21,11 +21,13 @@ jobs:
       # Step 2: 安装构建所需的软件包
       - name: Install base package
         run: |
+          df -h
           ls
 
       # Step 3: 构建 deb 文件
       - name: Build
         run: |
+          df -h
           uname -a
           sudo uname -a
           sudo bash build.sh
