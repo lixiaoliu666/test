@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    container: ghcr.io/lixiaoliu666/pve9docker:main
+    #container: ghcr.io/lixiaoliu666/pve9docker:main
     env:
       TZ: Asia/Shanghai
     steps:
