@@ -13,11 +13,6 @@ jobs:
     env:
       TZ: Asia/Shanghai
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 10240
-          remove-dotnet: 'true'
       # Step 1: 检出代码     
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,6 +27,8 @@ jobs:
           df -h | grep '/$'
           pwd
           ls
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
 
       # Step 3: 构建 deb 文件
       - name: Build
