@@ -2,6 +2,8 @@ rm /etc/apt/sources.list
 rm /etc/apt/sources.list.d/*.sources
 echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware" > /etc/apt/sources.list
 echo "deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
+gpg --recv-keys --keyserver keyserver.ubuntu.com 6ED0E7B82643E131
+gpg --recv-keys --keyserver keyserver.ubuntu.com 78DBA3BC47EF2265
 # 增加Proxmox 的源文件
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve trixie pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
 # 增加 ceph 源文件 换源
