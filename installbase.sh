@@ -1,5 +1,3 @@
-apt-get update
-apt-get install -y wget git
 rm /etc/apt/sources.list
 echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware" > /etc/apt/sources.list
 echo "deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
@@ -9,9 +7,9 @@ echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve trixie pve-no-subscript
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/ceph-squid trixie no-subscription" > /etc/apt/sources.list.d/ceph.list
 wget -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg "https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg"
 wget -O /etc/apt/trusted.gpg.d/proxmox-release-trixie.gpg "https://enterprise.proxmox.com/debian/proxmox-release-trixie.gpg"
-
 apt-get update
 apt-get dist-upgrade -y
+apt-get install -y wget git
 apt-get install -y devscripts autotools-dev autogen dh-autoreconf dkms doxygen check pkg-config \
             groff quilt automake autoconf libtool lintian libdevel-cycle-perl \
             libjson-perl libcommon-sense-perl liblinux-inotify2-perl libio-stringy-perl \
