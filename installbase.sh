@@ -1,8 +1,8 @@
 rm /etc/apt/sources.list
 rm /etc/apt/sources.list.d/*.sources
 touch /etc/apt/sources.list
-echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware" > /etc/apt/sources.list
-echo "deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
+echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware
+deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
 gpg --recv-keys --keyserver keyserver.ubuntu.com 6ED0E7B82643E131
 gpg --recv-keys --keyserver keyserver.ubuntu.com 78DBA3BC47EF2265
 # 增加Proxmox 的源文件
