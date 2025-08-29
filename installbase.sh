@@ -1,5 +1,8 @@
 apt-get update
 apt-get install -y wget git
+rm /etc/apt/sources.list
+echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware" > /etc/apt/sources.list
+echo "deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
 # 增加Proxmox 的源文件
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve trixie pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
 # 增加 ceph 源文件 换源
