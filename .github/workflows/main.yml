@@ -43,7 +43,7 @@ jobs:
       # Step 3: 构建 deb 文件
       - name: Build
         run: |
-          sudo installbase.sh
+          sudo bash installbase.sh
           df -h
           uname -a
           sudo uname -a
