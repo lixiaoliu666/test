@@ -3,8 +3,12 @@ rm /etc/apt/sources.list.d/*.sources
 touch /etc/apt/sources.list
 echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware
 deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
-gpg --recv-keys --keyserver keyserver.ubuntu.com 6ED0E7B82643E131
-gpg --recv-keys --keyserver keyserver.ubuntu.com 78DBA3BC47EF2265
+
+# 下载debian的key
+apt-key adv --keyserver keyserver.ubuntu.com  --recv-keys 6ED0E7B82643E131
+apt-key adv --keyserver keyserver.ubuntu.com  --recv-keys 78DBA3BC47EF2265
+apt-key adv --keyserver keyserver.ubuntu.com  --recv-keys 762F67A0B2C39DE4
+
 # 增加Proxmox 的源文件
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve trixie pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
 # 增加 ceph 源文件 换源
@@ -12,7 +16,7 @@ echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/ceph-squid trixie no-subscr
 wget -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg "https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg"
 wget -O /etc/apt/trusted.gpg.d/proxmox-release-trixie.gpg "https://enterprise.proxmox.com/debian/proxmox-release-trixie.gpg"
 apt-get update
-apt-get dist-upgrade -y
+#apt-get upgrade -y
 apt-get install -y wget git
 apt-get install -y devscripts autotools-dev autogen dh-autoreconf dkms doxygen check pkg-config \
             groff quilt automake autoconf libtool lintian libdevel-cycle-perl \
@@ -41,8 +45,6 @@ apt-get install -y devscripts autotools-dev autogen dh-autoreconf dkms doxygen c
             libiscsi7 librsvg2-bin libarchive-dev libgpgme-dev libcurl4-gnutls-dev \
             libtest-mockmodule-perl libjemalloc-dev libjpeg-dev
             
-apt-get install -y proxmox-default-kernel
-
 apt-get install -y docutils-common fonts-font-awesome libacl1-dev libattr1-dev libcap-ng-dev \
             libcap2-bin libegl-dev libepoxy-dev libfdt-dev libfdt1 libgbm-dev \
             libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 \
