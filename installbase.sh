@@ -1,4 +1,5 @@
 rm /etc/apt/sources.list
+rm /etc/apt/sources.list.d/*.sources
 echo "deb http://mirrors.ustc.edu.cn/debian trixie main contrib non-free non-free-firmware" > /etc/apt/sources.list
 echo "deb http://mirrors.ustc.edu.cn/debian trixie-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
 # 增加Proxmox 的源文件
